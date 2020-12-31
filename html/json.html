@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" name="thing" id="thing" value="">
+    <button>nothing</button>
+</body>
+<script>
+    $("button").click(function(){
+        var tempthing = $("#thing").val()
+        console.log(tempthing)
+        $.get("./testget", {
+                thing :  $("#thing").val() , //传入参数
+            }, function (data){
+                console.log(data)
+            }
+        );
+    });
+</script>
+</html>

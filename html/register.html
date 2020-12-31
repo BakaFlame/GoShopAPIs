@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    用户名<input type="text" id="username" name="username" value="">
+    密码<input type="text" id="password" name="password" value="">
+    邮箱<input type="text" id="email" name="email" value="">
+    <button>register</button>
+</form>
+</body>
+<script>
+    $("button").click(function(){
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var email = $("#email").val();
+        $.ajax({
+            type: "POST",
+            url: "./userregister",
+            dataType: "json",
+            data:{
+                "username":username,
+                "password":password,
+                "email":email,
+            },
+            success:function (message) {
+                alert("提交成功"+JSON.stringify(message));
+            },
+            error:function (message) {
+                alert("提交失败"+JSON.stringify(message));
+            }
+        });
+    });
+</script>
+</html>
