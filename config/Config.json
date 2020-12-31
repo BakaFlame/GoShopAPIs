@@ -3,5 +3,10 @@
   "app_mode": "debug",
   "app_host":"",
   "app_port": "23333",
-  "app_email": "2794827531@qq.com"
+  "app_email": "2794827531@qq.com",
+  "db_host" : "127.0.0.1",
+  "db_port" : ":3306",
+  "db_username" : "root",
+  "db_password" : "123456",
+  "db_name" : "go_shop"
 }

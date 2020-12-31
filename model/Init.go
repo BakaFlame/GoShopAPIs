@@ -6,19 +6,19 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"fmt"
+	"github.com/go-redis/redis/v8"
 	"github.com/jinzhu/gorm"
 	"log"
 	"time"
-	"github.com/go-redis/redis/v8"
 )
 
-var DB *gorm.DB //全局DB变量保证只初始化一次DB
-var err error //附赠品 用于检查数据库连接是否错误
+var DB *gorm.DB      //全局DB变量保证只初始化一次DB
+var err error        //附赠品 用于检查数据库连接是否错误
 var DB_query *sql.DB //全局变量普通DB_query保证只初始化一次DB (待改善)
 var RedisDB *redis.Client
 var Pipe redis.Pipeliner
 
-type BetterTime struct{ //因为gorm自带转化time不是想要的标准格式 故用自定义time
+type BetterTime struct { //因为gorm自带转化time不是想要的标准格式 故用自定义time
 	time.Time
 }
 
@@ -44,32 +44,32 @@ func (t *BetterTime) Scan(v interface{}) error {
 	return fmt.Errorf("can not convert %v to timestamp", v)
 }
 
-func RegisterDB() (*gorm.DB,*sql.DB,*redis.Client){
-		DB, err = gorm.Open("mysql", "root:123456@/go_shop?charset=utf8&parseTime=True&loc=Local") //连接MYSQL
-		if err != nil {
-			log.Fatal(err.Error())
-		}
+func RegisterDB(userName string, password string, host string, port string, dbName string) (*gorm.DB, *sql.DB, *redis.Client) {
+	DB, err = gorm.Open("mysql", userName+":"+password+"@tcp("+host+port+")/"+dbName+"?charset=utf8&parseTime=True&loc=Local") //连接MYSQL
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 
-		DB.DB().SetMaxIdleConns(20)
-		DB.DB().SetMaxOpenConns(100)
+	DB.DB().SetMaxIdleConns(20)
+	DB.DB().SetMaxOpenConns(100)
 
-		connstr := "root:123456@tcp(127.0.0.1:3306)/go_shop" //原生MYSQL
-		DB_query, err = sql.Open("mysql", connstr)
-		if err != nil {
-			log.Fatal(err.Error())
-		}
-		RedisDB = redis.NewClient(&redis.Options{ //连接Redis
-			Addr:     "localhost:6379",
-			Password: "", // no password set
-			DB:       0,  // use default DB
-		})
-	Pipe=RedisDB.Pipeline()
-	return DB,DB_query,RedisDB
+	connstr := userName + ":" + password + "@tcp(" + host + port + ")/" + dbName //原生MYSQL
+	DB_query, err = sql.Open("mysql", connstr)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	RedisDB = redis.NewClient(&redis.Options{ //连接Redis
+		Addr:     "localhost:6379",
+		Password: "", // no password set
+		DB:       0,  // use default DB
+	})
+	Pipe = RedisDB.Pipeline()
+	return DB, DB_query, RedisDB
 }
 
 func SwitchRedisDB(index int) bool {
-	Pipe.Select(context.Background(),index)
-	_,err:=Pipe.Exec(context.Background())
+	Pipe.Select(context.Background(), index)
+	_, err := Pipe.Exec(context.Background())
 	if err != nil {
 		fmt.Println(err)
 		return false

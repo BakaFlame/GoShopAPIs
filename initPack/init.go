@@ -11,19 +11,19 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-func InitWeb() (*gin.Engine,*tool.Config,*gorm.DB,*sql.DB,*redis.Client) {
-	cfg,err := tool.ParseConfig("./config/Config.json") //配置文件加载
+func InitWeb() (*gin.Engine, *tool.Config, *gorm.DB, *sql.DB, *redis.Client) {
+	cfg, err := tool.ParseConfig("./config/Config.json") //配置文件加载
 	if err != nil {
 		panic(err.Error())
 	}
-	if cfg.AppMode == "release"{
+	if cfg.AppMode == "release" {
 		gin.SetMode(gin.ReleaseMode)
 	}
-	app:=gin.Default()
+	app := gin.Default()
 	app.Use(tool.Cors())
 	app.Use(middleWare.RequesterWare())
-	db,db_query,redisDB:=model.RegisterDB()//开启DB
-	controller.RegisterRouter(app) //注册路由
-	app.LoadHTMLGlob("html/*") //导入html文件夹
-	return app,cfg,db,db_query,redisDB //返回引擎，配置，DB
+	db, db_query, redisDB := model.RegisterDB(cfg.DBUsername, cfg.DBPassword, cfg.DBHost, cfg.DBPort, cfg.DBName) //开启DB
+	controller.RegisterRouter(app)                                                                                //注册路由
+	app.LoadHTMLGlob("html/*")                                                                                    //导入html文件夹
+	return app, cfg, db, db_query, redisDB                                                                        //返回引擎，配置，DB
 }
