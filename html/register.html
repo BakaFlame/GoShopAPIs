@@ -6,25 +6,44 @@
     <title>Title</title>
 </head>
 <body>
-<form>
     用户名<input type="text" id="username" name="username" value="">
     密码<input type="text" id="password" name="password" value="">
     邮箱<input type="text" id="email" name="email" value="">
-    <button>register</button>
-</form>
+    邮箱验证码<input type="text" id="emailcode" name="emailcode" value="">
+    <button id="register">register</button>
+    <button id="sendcode">发送验证码</button>
 </body>
 <script>
-    $("button").click(function(){
+    $("#register").click(function(){
         var username = $("#username").val();
         var password = $("#password").val();
         var email = $("#email").val();
+        var emailcode = $("#emailcode").val();
         $.ajax({
             type: "POST",
-            url: "./userregister",
+            url: "./register",
             dataType: "json",
             data:{
                 "username":username,
                 "password":password,
+                "email":email,
+                "emailcode":emailcode,
+            },
+            success:function (message) {
+                alert("提交成功"+JSON.stringify(message));
+            },
+            error:function (message) {
+                alert("提交失败"+JSON.stringify(message));
+            }
+        });
+    });
+    $("#sendcode").click(function(){
+        var email = $("#email").val();
+        $.ajax({
+            type: "POST",
+            url: "./registersendemailcode",
+            dataType: "json",
+            data:{
                 "email":email,
             },
             success:function (message) {

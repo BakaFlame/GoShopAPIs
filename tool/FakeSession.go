@@ -8,17 +8,18 @@ import (
 )
 
 type RedisUserInfo struct {
-	UserId string		`json:"userid"`
-	Username string	`json:"username"`
+	UserId    string `json:"userid"`
+	Username  string `json:"username"`
+	UserToken string `json:"usertoken"`
 }
 
-func GetUserInfoFromRedis(token string) (string,string){
+func GetUserInfoFromRedis(token string) (string, string) {
 	model.SwitchRedisDB(1)
-	redisToken,err:=model.RedisDB.Get(context.Background(),MD5EncodeWithSalt(token)).Result()
+	redisToken, err := model.RedisDB.Get(context.Background(), MD5EncodeWithSalt(token)).Result()
 	if err != nil {
 		fmt.Println(err)
 	}
-	userData:=RedisUserInfo{}
-	json.Unmarshal([]byte(redisToken),&userData)
-	return userData.UserId,userData.Username
+	userData := RedisUserInfo{}
+	json.Unmarshal([]byte(redisToken), &userData)
+	return userData.UserId, userData.Username
 }

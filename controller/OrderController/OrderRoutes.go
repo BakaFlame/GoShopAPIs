@@ -1,19 +1,18 @@
 package OrderController
 
 import (
-	"GoShop/middleWare"
-	"GoShop/tool"
 	"github.com/gin-gonic/gin"
 )
 
-func (order *OrderStruct) Route(EngineRouter *gin.Engine)  {
+func (order *OrderStruct) Route(EngineRouter *gin.Engine) {
 	orderRoutes := EngineRouter.Group("/api/order")
-	orderRoutes.Use(tool.Cors(),middleWare.IsLogin())
+	orderRoutes.Use()
 	{
-		orderRoutes.POST("/getorderlist",order.GetOrderList)	//获取订单列表接口
-		orderRoutes.POST("/putorder",order.PutOrder)	//购物车提交订单
-		orderRoutes.POST("/orderpage",order.OrderPage)	//提交订单前页面
-		orderRoutes.POST("/refund",order.Refund)	//提交订单前页面
-		orderRoutes.POST("/changeaddress",order.ChangeAddress)	//提交订单前页面
+		orderRoutes.POST("/getorderlist", order.GetOrderList)   //获取订单列表接口
+		orderRoutes.POST("/putorder", order.PutOrder)           //提交订单接口
+		orderRoutes.POST("/orderpage", order.OrderPage)         //提交订单前页面数据
+		orderRoutes.POST("/refund", order.Refund)               //退款接口
+		orderRoutes.POST("/changeaddress", order.ChangeAddress) //更改地址接口
+		orderRoutes.POST("/deleteorder", order.DeleteOrder)     //删除订单接口
 	}
 }

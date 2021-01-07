@@ -3,6 +3,7 @@ package IndexModel
 import (
 	"GoShop/model"
 	"GoShop/model/ItemModel"
+	"fmt"
 	"math"
 	"strconv"
 )
@@ -24,6 +25,7 @@ func GetIndexNewestItem() interface{} {
 
 func GetIndexItemLIst(page int) interface{} { //这个好，1ms内，但是需要前端配合parsejson
 	var dataCount int
+	fmt.Println(page)
 	model.DB.Model(&ItemModel.Item{}).Count(&dataCount)
 	maxPage := math.Ceil(float64(dataCount) / 4) //最大页数(前端能刷新到的)
 	data, _ := model.QuerySql("select items.id,items.name,items.price,items.description,item_imgs.uri from items,item_imgs where items.status = 0 and items.id = item_imgs.item_id order by items.create_time desc LIMIT 4 OFFSET " + strconv.Itoa(page*4))
@@ -33,8 +35,8 @@ func GetIndexItemLIst(page int) interface{} { //这个好，1ms内，但是需�
 
 //获取首页banner
 func GetIndexBanner() interface{} {
-	data,_:=model.QuerySql("select id,uri,create_time from banners where type = 0 order by create_time desc limit 1")
-	data2,_:=model.QuerySql("select id,uri,create_time from banners where type = 0 order by create_time desc  limit 4")
-	var dataMap = map[string]interface{}{"banner1":data,"banner4":data2}
+	data, _ := model.QuerySql("select id,uri,create_time from banners where type = 0 order by create_time desc limit 1")
+	data2, _ := model.QuerySql("select id,uri,create_time from banners where type = 0 order by create_time desc  limit 4")
+	var dataMap = map[string]interface{}{"banner1": data, "banner4": data2}
 	return dataMap
 }

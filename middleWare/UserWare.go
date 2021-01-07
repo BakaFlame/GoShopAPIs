@@ -6,17 +6,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func IsLogin() gin.HandlerFunc{
+func IsLogin() gin.HandlerFunc {
 	return func(context *gin.Context) {
-		token:=context.GetHeader("thisisnotatoken")
-		fmt.Println(token)
-		fmt.Println("寻找token")
+		token := context.GetHeader("thisisnotatoken")
+		//fmt.Println(token)
+		//fmt.Println("寻找token")
 		if token == "" {
 			context.Abort()
 		} else {
-			fmt.Println("找到token密钥")
+			//fmt.Println("找到token密钥")
 			fmt.Println(token)
-			if UserModel.CheckTokenInRedis(token){ //开始匹配cookie
+			if UserModel.CheckTokenInRedis(token) { //开始匹配cookie
 				fmt.Println("redis找到token")
 			} else {
 				context.Abort()

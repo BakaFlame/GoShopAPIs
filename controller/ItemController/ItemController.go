@@ -54,16 +54,17 @@ func (itemStruct *ItemStruct) GetItemListByTypeAndBrand(context *gin.Context) {
 
 //按照名字来查询商品列表
 func (itemStruct *ItemStruct) GetItemListByItemName(context *gin.Context) {
-	itemName := context.PostForm("itemname")
+	name := context.PostForm("name")
 	pageData := context.PostForm("page") //page从0开始
 	page, _ := strconv.Atoi(pageData)
-	context.JSON(200, ItemModel.GetItemListByItemName(itemName, page))
+	context.JSON(200, ItemModel.GetItemListByItemName(name, page))
 }
 
 //获取商品详情信息
 func (itemStruct *ItemStruct) GetItemInfoById(context *gin.Context) {
-	itemId := context.PostForm("itemid")
-	var dataMap = map[string]interface{}{"item": ItemModel.GetItemById(itemId),"item_img":ItemModel.GetItemImgById(itemId)}
+	itemId := context.PostForm("id")
+	fmt.Println(itemId)
+	var dataMap = map[string]interface{}{"item": ItemModel.GetItemById(itemId), "item_img": ItemModel.GetItemImgById(itemId)}
 	context.JSON(200, dataMap)
 }
 

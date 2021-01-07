@@ -22,12 +22,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf8fc46-8b01-4a08-8830-18f4c8db4573" name="默认的" comment="">
+    <list default="true" id="bbf8fc46-8b01-4a08-8830-18f4c8db4573" name="默认的" comment="DB config stuffs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/Config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/Config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initPack/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/initPack/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Init.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/Init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/Config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AddressController/AddressController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AddressController/AddressController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AddressController/AddressRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AddressController/AddressRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CartController/CartController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CartController/CartController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CartController/CartRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CartController/CartRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/IndexController/IndexRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/IndexController/IndexRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ItemController/ItemController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController/ItemController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ItemController/ItemRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController/ItemRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/OrderController/OrderController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController/OrderController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/OrderController/OrderRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController/OrderRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/UserController/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController/UserController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/UserController/UserRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController/UserRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleWare/UserWare.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleWare/UserWare.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/AddressModel/AddressModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/AddressModel/AddressModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/CartModel/CartModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/CartModel/CartModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/IndexModel/IndexModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/IndexModel/IndexModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ItemModel/ItemModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/ItemModel/ItemModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/OrderModel/OrderModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/OrderModel/OrderModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/OrderModel/Structs.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/OrderModel/Structs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/UserModel/UserModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserModel/UserModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/CommonResult.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/CommonResult.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/EncodePack.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/EncodePack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/FakeSession.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/FakeSession.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/SetCookies.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,23 +86,23 @@
     <property name="configurable.项目.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GoWXOrder" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GoCode\src\GoShop\tool" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\GoCode\src\GoShop\controller\SiteController" />
       <recent name="E:\GoCode\src\GoShop\controller\BannerController" />
       <recent name="E:\GoCode\src\GoShop\controller\IndexController" />
       <recent name="E:\GoCode\src\GoShop\model\OrderModel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\GoCode\src\GoShop\tool" />
-    </key>
   </component>
-  <component name="RunManager" selected="Go 构建.WindowsServer">
+  <component name="RunManager" selected="Go 构建.go build main.go">
     <configuration name="LinuxServer" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="GoShop" />
       <working_directory value="$PROJECT_DIR$" />
@@ -155,6 +176,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DB config stuffs" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB config stuffs" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -184,30 +210,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="433" y="112" width="601" height="852" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605679292928" />
-    <state x="214" y="215" key="FileChooserDialogImpl" timestamp="1609341721699">
+    <state x="214" y="215" key="FileChooserDialogImpl" timestamp="1609750033685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="214" y="215" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609341721699" />
-    <state width="1861" height="184" key="GridCell.Tab.0.bottom" timestamp="1609328249276">
+    <state x="214" y="215" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609750033685" />
+    <state width="1861" height="199" key="GridCell.Tab.0.bottom" timestamp="1610004098192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609328249276" />
-    <state width="1861" height="184" key="GridCell.Tab.0.center" timestamp="1609328249276">
+    <state width="1861" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
+    <state width="1861" height="199" key="GridCell.Tab.0.center" timestamp="1610004098192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="184" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609328249276" />
-    <state width="1861" height="184" key="GridCell.Tab.0.left" timestamp="1609328249276">
+    <state width="1861" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
+    <state width="1861" height="199" key="GridCell.Tab.0.left" timestamp="1610004098191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="184" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609328249276" />
-    <state width="1861" height="184" key="GridCell.Tab.0.right" timestamp="1609328249276">
+    <state width="1861" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098191" />
+    <state width="1861" height="199" key="GridCell.Tab.0.right" timestamp="1610004098192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="184" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609328249276" />
+    <state width="1861" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
     <state width="1861" height="321" key="GridCell.Tab.1.bottom" timestamp="1606545740420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -224,20 +250,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1861" height="321" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606545740419" />
-    <state x="0" y="78" key="SettingsEditor" timestamp="1607265150107">
+    <state x="0" y="78" key="SettingsEditor" timestamp="1609835095135">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="74" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606367706749" />
-    <state x="0" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607265150107" />
-    <state x="115" y="0" width="729" height="1040" key="find.popup" timestamp="1608109501969">
+    <state x="0" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609835095135" />
+    <state x="452" y="182" key="Vcs.Push.Dialog.v2" timestamp="1610000822540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="115" y="0" width="729" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608109501969" />
-    <state x="59" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1609139603320">
+    <state x="452" y="182" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610000822540" />
+    <state x="115" y="0" width="729" height="1040" key="find.popup" timestamp="1609933615292">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="115" y="0" width="729" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609933615292" />
+    <state x="59" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1610004303635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="39" y="5" width="840" height="979" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1607318963528" />
-    <state x="59" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609139603320" />
+    <state x="59" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610004303635" />
     <state x="677" y="406" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1608467530020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
