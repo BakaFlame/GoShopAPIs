@@ -2,6 +2,7 @@ package OrderModel
 
 import (
 	"GoShop/model"
+	"GoShop/model/AddressModel"
 	"GoShop/model/CartModel"
 	"GoShop/model/ItemModel"
 	"fmt"
@@ -152,12 +153,12 @@ func GetOrderIdByDetailId(orderDetailId string) OrderDetail {
 	return orderDetail
 }
 
-func GetIOrderItemInfo(detailId string) OrderDetail {
-	orderDetail := OrderDetail{}
-	sql := "select * from order_details where id = ?"
-	model.DB.Raw(sql, detailId).Scan(&orderDetail)
-	return orderDetail
-}
+//func GetIOrderItemInfo(detailId string) OrderDetail {
+//	orderDetail := OrderDetail{}
+//	sql := "select * from order_details where id = ?"
+//	model.DB.Raw(sql, detailId).Scan(&orderDetail)
+//	return orderDetail
+//}
 
 func RefundAllItems(orderId string) bool {
 	sql := "update order_details set status = 1 where order_id = ?"
@@ -203,4 +204,28 @@ func DeleteOrder(orderId string) bool {
 	} else {
 		return false
 	}
+}
+
+func FinishOrder(orderId string) bool {
+	sql := "update set orders status = 3 where id = ?"
+	row := model.DB.Exec(sql, orderId).RowsAffected
+	if row == 1 {
+		return true
+	} else {
+		return false
+	}
+}
+
+func OrderDetailPage(orderId string) interface{} {
+	order := Order{}
+	sql := "select id,address_id,user_id,status from orders where id = ?"
+	model.DB.Raw(sql, orderId).Scan(&order)
+	address := AddressModel.Address{}
+	sql = "select id,real_name,address,phone from addresses where id = ?"
+	model.DB.Raw(sql, order.AddressId).Scan(&address)
+	orderDetail := []OrderDetail{}
+	sql = "select id,item_id,item_name,item_price,item_count,item_image,status from order_details where order_id = ?"
+	model.DB.Raw(sql, orderId).Scan(&orderDetail)
+	var dataMap = map[string]interface{}{"address": address, "order": order, "order_detail": orderDetail}
+	return dataMap
 }

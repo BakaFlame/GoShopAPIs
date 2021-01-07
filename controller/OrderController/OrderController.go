@@ -154,3 +154,22 @@ func (order OrderStruct) ChangeAddress(context *gin.Context) {
 		context.JSON(200, tool.ReturnData("状态有误，更改地址", false, false))
 	}
 }
+
+func (order OrderStruct) FinishOrder(context *gin.Context) {
+	orderId := context.PostForm("orderid")
+	orderInfo := OrderModel.GetOrderInfo(orderId)
+	if orderInfo.Status == 2 {
+		if OrderModel.FinishOrder(orderId) {
+			context.JSON(200, tool.ReturnData("确认收货成功", true, false))
+		} else {
+			context.JSON(200, tool.ReturnData("确认收货失败", false, false))
+		}
+	} else {
+		context.JSON(200, tool.ReturnData("状态有误，更改地址", false, false))
+	}
+}
+
+func (order OrderStruct) OrderDetailPage(context *gin.Context) {
+	orderId := context.PostForm("orderid")
+	context.JSON(200, OrderModel.OrderDetailPage(orderId))
+}
