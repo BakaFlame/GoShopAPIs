@@ -15,14 +15,15 @@ func GetOrderList(userId string, orderType string, page int) interface{} {
 	var dataCount int
 	fmt.Println("ordertype为" + orderType)
 	if orderType == "all" { //查询所有的物品
-		orderSql = "select orders.id,orders.create_time,order_details.item_id,order_details.item_name,order_details.item_price,order_details.item_count,order_details.item_image,order_details.status from orders,order_details where orders.id = order_details.order_id and orders.status <> 4 and orders.user_id = " + userId + " order by orders.create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
-		model.DB.Model(&Order{}).Where("status <> ?", 4).Count(&dataCount)
+		orderSql = "select id,user_id,address_id,create_time,update_time from orders where orders.status <> 4 and user_id = " + userId + " order by create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
+		model.DB.Model(&Order{}).Where("status <> ? and user_id = ?", 4, userId).Count(&dataCount)
 	} else if orderType == "unfinished" { //查询未完成的订单（待付款，待发货，已发货）
-		orderSql = "select orders.id,orders.create_time,order_details.item_id,order_details.item_name,order_details.item_price,order_details.item_count,order_details.item_image,order_details.status from orders,order_details where orders.id = order_details.order_id and orders.status = 0 or orders.status = 1 or orders.status = 2 and orders.user_id = " + userId + " order by orders.create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
-		model.DB.Model(&Order{}).Where("status = ? or status = ? or status = ?", 0, 1, 2).Count(&dataCount)
+		//orderSql = "select orders.id,orders.create_time,order_details.item_id,order_details.item_name,order_details.item_price,order_details.item_count,order_details.item_image,order_details.status from orders,order_details where orders.id = order_details.order_id and (orders.status = 0 or orders.status = 1 or orders.status = 2) and orders.user_id = " + userId + " order by orders.create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
+		orderSql = "select id,user_id,address_id,create_time,update_time from orders where (orders.status = 0 or orders.status = 1 or orders.status = 2) and orders.user_id = " + userId + " order by orders.create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
+		model.DB.Model(&Order{}).Where("status = ? or status = ? or status = ? and user_id = ?", 0, 1, 2, userId).Count(&dataCount)
 	} else if orderType == "finished" { //查询完成的订单
-		orderSql = "select orders.id,orders.create_time,order_details.item_id,order_details.item_name,order_details.item_price,order_details.item_count,order_details.item_image,order_details.status from orders,order_details where orders.id = order_details.order_id and orders.status = 3  and orders.user_id = " + userId + " order by orders.create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
-		model.DB.Model(&Order{}).Where("status = ?", 3).Count(&dataCount)
+		orderSql = "select id,user_id,address_id,create_time,update_time from orders where status = 3  and user_id = " + userId + " order by create_time desc LIMIT 10 OFFSET " + strconv.Itoa(page*10)
+		model.DB.Model(&Order{}).Where("status = ? and user_id = ?", 3, userId).Count(&dataCount)
 	}
 	fmt.Println(orderSql)
 	maxPage := math.Ceil(float64(dataCount) / 10)

@@ -22,33 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf8fc46-8b01-4a08-8830-18f4c8db4573" name="默认的" comment="DB config stuffs">
+    <list default="true" id="bbf8fc46-8b01-4a08-8830-18f4c8db4573" name="默认的" comment="new year update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/AddressController/AddressController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AddressController/AddressController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/AddressController/AddressRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AddressController/AddressRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/CartController/CartController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CartController/CartController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/CartController/CartRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CartController/CartRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/IndexController/IndexRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/IndexController/IndexRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ItemController/ItemController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController/ItemController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ItemController/ItemRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController/ItemRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/OrderController/OrderController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController/OrderController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/OrderController/OrderRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController/OrderRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/UserController/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController/UserController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/UserController/UserRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController/UserRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleWare/UserWare.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleWare/UserWare.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AddressModel/AddressModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/AddressModel/AddressModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CartModel/CartModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/CartModel/CartModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/IndexModel/IndexModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/IndexModel/IndexModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ItemModel/ItemModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/ItemModel/ItemModel.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/OrderModel/OrderModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/OrderModel/OrderModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/OrderModel/Structs.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/OrderModel/Structs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/UserModel/UserModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserModel/UserModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/CommonResult.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/CommonResult.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/EncodePack.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/EncodePack.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/FakeSession.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/FakeSession.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/SetCookies.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +79,7 @@
       <recent name="E:\GoCode\src\GoShop\model\OrderModel" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build main.go">
+  <component name="RunManager" selected="Go 构建.LinuxServer">
     <configuration name="LinuxServer" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="GoShop" />
       <working_directory value="$PROJECT_DIR$" />
@@ -180,7 +157,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DB config stuffs" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB config stuffs" />
+    <MESSAGE value="new year update" />
+    <option name="LAST_COMMIT_MESSAGE" value="new year update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -214,26 +192,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="214" y="215" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609750033685" />
-    <state width="1861" height="199" key="GridCell.Tab.0.bottom" timestamp="1610004098192">
+    <state width="1861" height="198" key="GridCell.Tab.0.bottom" timestamp="1610007993228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
-    <state width="1861" height="199" key="GridCell.Tab.0.center" timestamp="1610004098192">
+    <state width="1861" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610007993228" />
+    <state width="1861" height="198" key="GridCell.Tab.0.center" timestamp="1610007993227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
-    <state width="1861" height="199" key="GridCell.Tab.0.left" timestamp="1610004098191">
+    <state width="1861" height="198" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610007993227" />
+    <state width="1861" height="198" key="GridCell.Tab.0.left" timestamp="1610007993227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098191" />
-    <state width="1861" height="199" key="GridCell.Tab.0.right" timestamp="1610004098192">
+    <state width="1861" height="198" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610007993227" />
+    <state width="1861" height="198" key="GridCell.Tab.0.right" timestamp="1610007993227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1221" height="196" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1607325855633" />
-    <state width="1861" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610004098192" />
+    <state width="1861" height="198" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610007993227" />
     <state width="1861" height="321" key="GridCell.Tab.1.bottom" timestamp="1606545740420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -255,10 +233,10 @@
     </state>
     <state x="0" y="74" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606367706749" />
     <state x="0" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609835095135" />
-    <state x="452" y="182" key="Vcs.Push.Dialog.v2" timestamp="1610000822540">
+    <state x="452" y="182" key="Vcs.Push.Dialog.v2" timestamp="1610008085995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="182" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610000822540" />
+    <state x="452" y="182" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610008085995" />
     <state x="115" y="0" width="729" height="1040" key="find.popup" timestamp="1609933615292">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
