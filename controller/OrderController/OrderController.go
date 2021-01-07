@@ -19,8 +19,9 @@ func (order OrderStruct) GetOrderList(context *gin.Context) {
 	orderType := context.PostForm("ordertype")
 	pageData := context.PostForm("page")
 	page, _ := strconv.Atoi(pageData)
-	//token:=context.GetHeader("thisisnotatoken")
-	userId := "16"
+	token := context.GetHeader("thisisnotatoken")
+	userId, _ := tool.GetUserInfoFromRedis(token)
+	//userId := "16"
 	context.JSON(200, OrderModel.GetOrderList(userId, orderType, page))
 }
 
@@ -116,7 +117,7 @@ func (order OrderStruct) Refund(context *gin.Context) {
 	} else if orderDetailId != "" {
 		orderDetail := OrderModel.GetOrderIdByDetailId(orderDetailId)
 		orderInfo := OrderModel.GetOrderInfo(strconv.Itoa(orderDetail.ID))
-		if orderInfo.Status == 3 && orderDetail.Status == 1 {
+		if orderInfo.Status == 3 && orderDetail.Status == 0 {
 			if OrderModel.RefundSingleItem(orderDetailId) {
 				context.JSON(200, tool.ReturnData("退款已提交，请等待处理", true, false))
 			} else {
